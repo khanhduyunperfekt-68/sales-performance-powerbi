@@ -22,6 +22,14 @@ A two-page Power BI dashboard to monitor sales performance and identify key driv
 
 ---
 
+## Project Highlights
+- Built a 2-page Power BI dashboard (Overview + Deep Dive) for Apr 2023–Apr 2025 (partial 2025)
+- Modeled a Date table and standardized KPIs: Sales, Profit, Margin, Orders, Customers, AOV
+- Implemented YoY/MoM comparisons and Sales vs Last Year trend using DAX time intelligence
+- Created Profit-based Top 10 product ranking to guide scaling decisions
+- Documented measures and assumptions (partial-month coverage)
+
+
 ## Business Goal
 Build an end-to-end monitoring dashboard that answers:
 - How are Sales, Profit, and Margin performing over time?
