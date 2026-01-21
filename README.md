@@ -1,50 +1,65 @@
-# Sales Performance Dashboard (Apr 2023–Apr 2025)
+# Sales Performance Dashboard (Apr 2023 – Apr 2025)
 
-## 1. Business Goal
-Build an end-to-end sales performance dashboard to monitor Sales, Profit, Margin, Orders, Customers, and identify drivers across time, region, segment, and product.
+A two-page Power BI dashboard to monitor sales performance and identify key drivers across time, region, segment, and product.
 
-## 2. Dataset
-- Source: sale_data.csv (order-level)
-- Coverage: Apr 2023 → Apr 2025 (partial 2025)
-- Key fields: Order Date, Sales, Profit, Order ID, Customer ID, Region, Segment, Product Name
+## Dashboard Preview
 
-## 3. Data Modeling
-- Created a Date table and relationship: Date[Date] → sale_data[Order Date]
-- Marked Date table as Date Table
-- Implemented English month labels using SWITCH to avoid locale issues
+**Overview**
+![Overview](screenshots/overview.png)
 
-## 4. KPI Definitions (DAX)
-- Total Sales = SUM(sale_data[Sales])
-- Total Profit = SUM(sale_data[Profit])
-- Total Orders = DISTINCTCOUNT(sale_data[Order ID])
-- Total Customers = DISTINCTCOUNT(sale_data[Customer ID])
-- Margin = Total Profit / Total Sales
-- AOV = Total Sales / Total Orders
-- YoY / MoM measures using SAMEPERIODLASTYEAR and DATEADD
+**Deep Dive**
+![Deep Dive](screenshots/deep_dive.png)
 
-## 5. Dashboard Pages
-### Overview
-- KPI summary
-- Monthly trend
-- Sales by segment & region
-- Top products
+**Sales vs Last Year**
+![Sales vs LY](screenshots/sales_vs_ly.png)
 
-### Deep Dive
-- YoY/MoM KPI cards
-- Sales vs Sales LY trend
-- Region/segment breakdown
-- Top products ranked by profit (Top 10)
+**Top 10 Products (by Profit Rank)**
+![Top 10 Products](screenshots/top10_products.png)
 
-## 6. Key Findings
-- Sales YoY: ~+90.7%; Profit YoY: ~+87.0% (latest period in selection)
-- Segment mix is balanced (~33% each)
-- Regions are relatively even in sales (~$3.0M–$3.2M)
+---
 
-## 7. Recommendations
-- Set margin guardrails & alerts for early detection
-- Manage product portfolio based on profit ranking (Top 10)
-- Normalize partial months (Sales/day) for fair YoY comparisons
+## Business Goal
+Build an end-to-end monitoring dashboard that answers:
+- How are Sales, Profit, and Margin performing over time?
+- Which regions/segments/products drive performance?
+- How does performance compare YoY and MoM?
 
-## 8. Limitations & Next Steps
-- 2025 is partial; consider excluding partial month or using normalized KPIs
-- Add discount/returns/channel/cost data for deeper margin diagnostics
+## Dataset
+- File: `data/sale_data.csv`
+- Granularity: order-level
+- Coverage: Apr 2023 → Apr 2025 (**partial 2025**)
+
+## Core KPIs (Overall)
+- Total Sales: **$12.507M**
+- Total Profit: **$2.240M**
+- Margin: **17.91%**
+- Orders: **~5K**
+- Customers: **~4K**
+- AOV: **~$2.50K**
+
+## Data Modeling (Power BI)
+- Created a dedicated Date table and related it to the fact table by Order Date
+- Standardized time axis using Year-Month labels to avoid mixed-year month sorting
+- Forced English month labels (to avoid locale output like “thg4/thg5”)
+
+## DAX Measures
+All measures used in this project are documented here:
+- `dax/measures.txt`
+
+Key measures include:
+- Total Sales, Total Profit, Total Orders, Total Customers, Margin, AOV
+- YoY and MoM comparisons using time intelligence patterns
+
+## Key Findings (from dashboard)
+- Strong uplift in YoY performance (Sales and Profit)
+- Sales distribution by Region is relatively balanced
+- Top products ranked by Profit help prioritize what to scale
+
+## Recommendations
+- Set margin guardrails and monitor margin monthly by Region/Segment
+- Manage the product portfolio using Profit-based Top 10 ranking
+- Treat partial months carefully (normalize by day or exclude partial month for fair comparisons)
+
+## Next Steps
+- Add discount/returns/channel/cost data to explain margin movement
+- Build drill-through pages for Product → Region/Segment diagnostics
