@@ -2,6 +2,10 @@
 
 A two-page Power BI dashboard to monitor sales performance and identify key drivers across time, region, segment, and product.
 
+## Case Study (PDF)
+- [Download / View the 1-slide case study](docs/Project01_SalesDashboard.pdf)
+
+
 ## Dashboard Preview
 
 **Overview**
