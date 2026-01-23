@@ -62,16 +62,46 @@ Key measures include:
 - Total Sales, Total Profit, Total Orders, Total Customers, Margin, AOV
 - YoY and MoM comparisons using time intelligence patterns
 
-## Key Findings (from dashboard)
-- Strong uplift in YoY performance (Sales and Profit)
-- Sales distribution by Region is relatively balanced
-- Top products ranked by Profit help prioritize what to scale
+## Insight 1 - Growth is real, but decision quality depends on normalizing time
+
+Evidence: Sales YoY ~ +90.7%, Profit YoY ~ +87.0% (Deep Dive).
+
+Mechanism: YoY uplift can be overstated/understated if the latest period contains partial months - the comparison baseline is not like-for-like.
+
+Bottleneck: performance narrative becomes fragile when stakeholders challenge comparability.
+
+Focus: report YoY at monthly granularity and exclude/normalize partial month (sales/day or cut-off aligned) to make the story audit-proof.
+
+## Insight 2 - Region is not the constraint; margin + product mix are the levers
+
+Evidence: Sales by Region is relatively balanced (no single “hero region”). Margin is ~17.9% overall.
+
+Mechanism: when geography is evenly distributed, variance in outcomes typically comes from mix (which products/segments sell) and economics (margin), not location.
+
+Bottleneck: scaling sales without controlling mix can dilute margin.
+
+Focus: manage growth through profit-led portfolio actions - protect margin via thresholds, review low-margin high-volume items, scale profit-leading products.
+
+## Insight 3 - Segment diversification reduces dependency risk, but blurs where to act
+
+Evidence: Segment split ~ one-third each (Corporate/Home Office/Consumer).
+
+Mechanism: balanced mix lowers concentration risk, but makes “where to invest” unclear unless you connect segment performance to profitability and product drivers.
+
+Bottleneck: without a driver view, teams chase volume instead of value.
+
+Focus: add a driver layer: segment x product profitability and contribution - prioritize initiatives where profit contribution is highest, not just sales.
+
+## Key action
+
+Make YoY comparison audit-proof (normalize partial month).
+
+Shift from volume-led to profit-led growth (portfolio + margin guardrails).
+
+Add driver cut (Segment x Product contribution) to pinpoint where to invest.
 
 ## Recommendations
 - Set margin guardrails and monitor margin monthly by Region/Segment
 - Manage the product portfolio using Profit-based Top 10 ranking
 - Treat partial months carefully (normalize by day or exclude partial month for fair comparisons)
 
-## Next Steps
-- Add discount/returns/channel/cost data to explain margin movement
-- Build drill-through pages for Product → Region/Segment diagnostics
